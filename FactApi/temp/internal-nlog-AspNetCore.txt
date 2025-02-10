@@ -1,0 +1,9 @@
+2025-02-09 23:02:25.3365 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=allfile)
+2025-02-09 23:02:25.3499 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=ownFile-web)
+2025-02-09 23:02:25.3499 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=lifetimeConsole)
+2025-02-09 23:02:25.3878 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=db)
+2025-02-09 23:02:25.4044 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.3.4.2778. Product version: 5.3.4+73d83d3161d31288ca5c554cc50d27b6bed5f28b. GlobalAssemblyCache: False
+2025-02-09 23:02:25.4246 Info Validating config: TargetNames=lifetimeConsole, ownFile-web, db, ConfigItems=88, FilePath=C:\Proyects\golan\github\DotNetApp\FactApi\bin\Debug\net8.0\NLog.config
+2025-02-09 23:02:25.4360 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: allfile
+2025-02-09 23:02:25.4638 Info Configuration initialized.
+2025-02-09 23:02:25.6654 Info Validating config: TargetNames=lifetimeConsole, ownFile-web, db, ConfigItems=88, FilePath=C:\Proyects\golan\github\DotNetApp\FactApi\bin\Debug\net8.0\NLog.config
