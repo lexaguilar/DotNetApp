@@ -21,7 +21,7 @@ jobs:
       with:
         dotnet-version: 8.0.x
     - name: Restore dependencies
-      run: dotnet restore -p ./FactApi/FactApi.csproj
+      run: dotnet restore ./FactApi/FactApi.csproj
     - name: Build
       run: dotnet build --no-restore ./FactApi/FactApi.csproj
    
