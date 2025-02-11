@@ -28,6 +28,12 @@ jobs:
     - name: Show extracted version
       run: echo "Project version is $VERSION"
 
+    - name: Set Full Version
+      run: echo "FULL_VERSION=${VERSION}.${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+
+    - name: Show Full Version
+      run: echo "Project version is $FULL_VERSION"
+
     - uses: docker/login-action@v3.3.0
       with:  
           username: lexaguilar
@@ -35,8 +41,8 @@ jobs:
   
     - name: Build Docker Image 
       run: |
-        docker build -t lexaguilar/factapi:latest -f ./FactApi/dockerfile FactApi --build-arg BUILD_VERSION=$VERSION
+        docker build -t lexaguilar/factapi:${GITHUB_RUN_NUMBER} -f ./FactApi/dockerfile FactApi --build-arg BUILD_VERSION=${FULL_VERSION}
    
     - name: Push Docker Image to Docker Hub
       run: |
-          docker push lexaguilar/factapi:latest
+          docker push lexaguilar/factapi:${GITHUB_RUN_NUMBER}
