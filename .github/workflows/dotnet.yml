@@ -30,8 +30,13 @@ jobs:
           username: lexaguilar
           # Password or personal access token used to log against the Docker registry
           password: dckr_pat_PejxSRCF6qqJJ1fjHkoXPbwGeAY
+    - name: Extract version from .csproj
+      run: |
+            VERSION=$(grep -oP '(?<=<AssemblyVersion>).*?(?=</AssemblyVersion>)' ./FactApi/FactApi.csproj)
+            echo "VERSION=$VERSION" >> $GITHUB_ENV
+  
     - name: Build Docker Image 
       run: |
-        docker build -t lexaguilar/factapi:latest -f ./FactApi/dockerfile FactApi
+        docker build -t lexaguilar/factapi:latest -f ./FactApi/dockerfile FactApi --build-arg BUILD_VERSION=$VERSION
    
     
