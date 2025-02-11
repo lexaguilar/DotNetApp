@@ -30,7 +30,7 @@ jobs:
           username: lexaguilar
           # Password or personal access token used to log against the Docker registry
           password: dckr_pat_PejxSRCF6qqJJ1fjHkoXPbwGeAY
-    - name: Build Docker Image ./FactApi/dockerfile
+    - name: Build Docker Image -f ./FactApi/dockerfile
       run: |
         docker build -t lexaguilar/factapi:latest .
    
