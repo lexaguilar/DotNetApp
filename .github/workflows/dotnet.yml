@@ -26,13 +26,13 @@ jobs:
         $VERSION
 
     - name: Show extracted version
-      run: echo "Project version is $VERSION"
+      run: echo $VERSION
 
     - name: Set Full Version
-      run: echo "FULL_VERSION=${VERSION}.${GITHUB_RUN_NUMBER}" >> $GITHUB_ENV
+      run: $FULL_VERSION=$VERSION.${GITHUB_RUN_NUMBER}"
 
     - name: Show Full Version
-      run: echo "Project version is $FULL_VERSION"
+      run: echo $FULL_VERSION
 
     - uses: docker/login-action@v3.3.0
       with:  
