@@ -32,7 +32,7 @@ jobs:
       run: $FULL_VERSION="$VERSION.${GITHUB_RUN_NUMBER}"
 
     - name: Show Full Version
-      run: echo $FULL_VERSION
+      run: $FULL_VERSION
 
     - uses: docker/login-action@v3.3.0
       with:  
