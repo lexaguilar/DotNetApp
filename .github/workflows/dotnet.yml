@@ -24,15 +24,8 @@ jobs:
       run: |
         $VERSION = (Select-String -Path "./FactApi/FactApi.csproj" -Pattern "<AssemblyVersion>(.*?)</AssemblyVersion>").Matches.Groups[1].Value
         $VERSION
-
-    - name: Show extracted version
-      run: $VERSION
-
-    - name: Set Full Version
-      shell: pwsh
-      run: |
         $FULL_VERSION = "$VERSION.${env:GITHUB_RUN_NUMBER}"
-        echo $FULL_VERSION
+        $FULL_VERSION
 
     - uses: docker/login-action@v3.3.0
       with:  
