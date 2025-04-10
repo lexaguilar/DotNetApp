@@ -31,8 +31,8 @@ jobs:
     - name: Set Full Version
       shell: pwsh
       run: |
-        $FULL_VERSION = "${env:VERSION}.${env:GITHUB_RUN_NUMBER}"
-        echo $FULL_VERSION=$FULL_VERSION
+        $FULL_VERSION = "$VERSION.${env:GITHUB_RUN_NUMBER}"
+        echo $FULL_VERSION
 
     - uses: docker/login-action@v3.3.0
       with:  
