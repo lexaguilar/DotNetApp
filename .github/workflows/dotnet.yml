@@ -23,7 +23,7 @@ jobs:
     - name: Extract version from .csproj
       run: |
         $VERSION = (Select-String -Path "./FactApi/FactApi.csproj" -Pattern "<AssemblyVersion>(.*?)</AssemblyVersion>").Matches.Groups[1].Value
-        echo "VERSION=$VERSION" >> $env:GITHUB_ENV
+        $VERSION
 
     - name: Show extracted version
       run: echo "Project version is $VERSION"
