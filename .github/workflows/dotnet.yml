@@ -22,8 +22,8 @@ jobs:
         dotnet-version: 8.0.x   
     - name: Extract version from .csproj
       run: |
-          VERSION=$(grep -oP '(?<=<AssemblyVersion>).*?(?=</AssemblyVersion>)' ./FactApi/FactApi.csproj)
-          echo "VERSION=$VERSION" >> $GITHUB_ENV
+        $VERSION = (Select-String -Path "./FactApi/FactApi.csproj" -Pattern "<AssemblyVersion>(.*?)</AssemblyVersion>").Matches.Groups[1].Value
+        echo "VERSION=$VERSION" >> $env:GITHUB_ENV
 
     - name: Show extracted version
       run: echo "Project version is $VERSION"
