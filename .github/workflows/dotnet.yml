@@ -26,13 +26,13 @@ jobs:
         $VERSION
 
     - name: Show extracted version
-      run: echo $VERSION
+      run: $VERSION
 
     - name: Set Full Version
       shell: pwsh
       run: |
         $FULL_VERSION = "${env:VERSION}.${env:GITHUB_RUN_NUMBER}"
-        echo "FULL_VERSION=$FULL_VERSION" | Out-File -FilePath $env:GITHUB_ENV -Append
+        echo $FULL_VERSION=$FULL_VERSION
 
     - uses: docker/login-action@v3.3.0
       with:  
