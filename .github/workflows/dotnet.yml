@@ -29,7 +29,7 @@ jobs:
       run: echo $VERSION
 
     - name: Set Full Version
-      run: $FULL_VERSION=$VERSION.${GITHUB_RUN_NUMBER}"
+      run: $FULL_VERSION="$VERSION.${GITHUB_RUN_NUMBER}"
 
     - name: Show Full Version
       run: echo $FULL_VERSION
