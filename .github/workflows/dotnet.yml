@@ -26,6 +26,10 @@ jobs:
         $VERSION
         $FULL_VERSION = "$VERSION.${env:GITHUB_RUN_NUMBER}"
         $FULL_VERSION
+        "FULL_VERSION=$FULL_VERSION" | Out-File -FilePath $env:GITHUB_ENV -Append
+        
+    - name: Show Full Version
+      run: echo "Full version is ${{ env.FULL_VERSION }}"
 
     - uses: docker/login-action@v3.3.0
       with:  
